@@ -10,3 +10,9 @@ CREATE TABLE estudante (
     create_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+-- Inserir dados no banco de dados via SQL create
+INSERT INTO estudante (nomecompleto, email, senha) VALUES
+("João Silva", "joaosilva@gmail.com", "123"),
+("Maria Oliveira", "mariaoliveira@gmail.com", "456"),
+("Pedro Santos", "pedrosantos@gmailcom", "789");
