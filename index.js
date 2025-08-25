@@ -1,14 +1,13 @@
-var mysql = require("mysql");
+var conexao = require('./conexaoBanco');
 
-var conecteBanco = mysql.createConnection({
- host:"localhost",
- user:"root",
- password:"",
- database:"escola"
-});
-
-conecteBanco.connect(function(error){
+conexao.connect(function(error){
     if(error) throw error;
-        console.log("banco conectado com sucesso!");
-    
+        // console.log("banco conectado com sucesso!");
+
+conexao.query("SELECT * FROM estudante", function(error, result){
+    if(error) throw error;
+    //console.log(result);
+    console.log([0]);
+    console.log(result[0].nomecompleto);
+});
 });

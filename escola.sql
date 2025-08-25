@@ -16,3 +16,16 @@ INSERT INTO estudante (nomecompleto, email, senha) VALUES
 ("João Silva", "joaosilva@gmail.com", "123"),
 ("Maria Oliveira", "mariaoliveira@gmail.com", "456"),
 ("Pedro Santos", "pedrosantos@gmailcom", "789");
+
+
+-- Selecionar todos os  dados dda tabela estudante (READ)
+SELECT * FROM estudante;
+
+-- Selecionar uma coluna  da tabela estudante
+SELECT  email FROM estudante;
+
+-- Selecionar  MAIS DE UMA COLUNA da tabela estudante
+SELECT  nomecompleto, email FROM estudante;
+
+
+
