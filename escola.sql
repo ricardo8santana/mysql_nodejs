@@ -1,0 +1,12 @@
+-- Criar banco de dados
+CREATE DATABASE escola;
+
+-- Criar tabela colunas
+CREATE TABLE estudante (
+    id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    nomecompleto VARCHAR(60) NOT NULL,
+    email VARCHAR(50) UNIQUE NOT NULL,
+    senha VARCHAR(50) NOT NULL,
+    create_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
