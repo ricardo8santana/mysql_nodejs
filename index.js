@@ -8,6 +8,8 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({extended:true}));
 
+app.set('view engine', 'ejs');
+
 app.get('/', function(req, res){
     res.sendFile(__dirname + "/cadastro.html");
 
@@ -26,11 +28,24 @@ app.post('/', function(req, res){
    conexao.query(sql, [nomecompleto, email, senha], function(error, result){
     if(error) throw error;
     res.send("Estudante cadastrado com sucesso!" + result.insertId);
-    
+
    });
 
 });
 
+});
+
+//Leitura do banco de dados
+app.get('/listar', function(req, res){  
+conexao.connect(function(error, result){
+    if(error) console.log(error);
+
+    var sql = "SELECT * FROM estudante";
+    conexao.query(sql, function(error, result){     
+        if(error) console.log(error);       
+        console.log(result);       
+      });
+});
 });
 
 app.listen(7000);
