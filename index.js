@@ -1,3 +1,15 @@
+var express = require('express');
+var app = express();
+app.get('/', function(req, res){
+    res.sendFile(__dirname + "/cadastro.html");
+
+});
+
+app.listen(7000)
+
+
+
+/*
 var conexao = require('./conexaoBanco');
 
 conexao.connect(function(error){
@@ -11,3 +23,4 @@ conexao.query("SELECT * FROM estudante", function(error, result){
     console.log(result[0].nomecompleto);
 });
 });
+*/ 
